@@ -3,17 +3,22 @@
 {% block content %}
     <h1>FastAPI + Airtable</h1>
     
-    {% if submitted_email %}
-        <p>{{ submitted_email }}</p>
+    {% if submitted_email and did_send %}
+        <p>Thanks for joining with {{ submitted_email }}</p>
     {% endif %}
 
     <form method="POST">
         <input 
+            class="form-control"
             type="email" 
             name="email" 
             placeholder="Type email..."
             required="required"
         />
-        <input type="submit" value="Join waitlist" />
+        <input 
+            class="btn btn-primary mt-3"
+            type="submit" 
+            value="Join waitlist" 
+        />
     </form>
 {% endblock %}
